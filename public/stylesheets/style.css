@@ -1,0 +1,43 @@
+body {
+  padding: 50px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+  background: beige;
+  margin: auto;
+  width: 80%;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.userInput {
+  display: flex;
+  flex-direction: column;
+}
+
+.userInput div {
+  padding: 10px;
+}
+
+input {
+  height: 28px;
+  width: 70%;
+}
+
+button {
+  height: 30px;
+  width: 10%;
+}
+
+.crawlResult {
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.answer {
+  text-wrap: wrap;
+  height: 60px;
+}
+  

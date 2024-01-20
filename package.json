@@ -1,0 +1,44 @@
+{
+  "name": "webcrawler",
+  "version": "1.0.0",
+  "description": "Web Data Crawling and Vectorization",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon index.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/last-stand/webcrawler.git"
+  },
+  "keywords": [
+    "webcrawler",
+    "vectorization",
+    "pinecone"
+  ],
+  "author": "Jai Prakash",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/last-stand/webcrawler/issues"
+  },
+  "homepage": "https://github.com/last-stand/webcrawler#readme",
+  "dependencies": {
+    "@pinecone-database/pinecone": "^1.1.3",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.3.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "langchain": "^0.1.4",
+    "morgan": "^1.10.0",
+    "puppeteer": "^19.11.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "engines": {
+    "npm": ">=8.0.0 <10.0.0",
+    "node": ">=18.0.0"
+  }
+}
