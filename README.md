@@ -72,7 +72,7 @@ Here's a description of the architecture diagram, incorporating the specified co
         ENV=dev
         PORT=8001
         URL=http://127.0.0.1:8001
-        OPENAI_API_KEY=sk-YOUR_OPEN_API_KEY
+        OPENAI_API_KEY=sk-YOUR_OPENAI_API_KEY
         PINECONE_API_KEY=YOUR_PINECONE_API_KEY
         PINECONE_ENVIRONMENT=gcp-starter
         PINECONE_INDEX=web-crawler
