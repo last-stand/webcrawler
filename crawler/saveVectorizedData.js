@@ -2,7 +2,7 @@ import { OpenAIEmbeddings } from "langchain/embeddings/openai";
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter';
 import { Pinecone } from "@pinecone-database/pinecone";
 
-async function saveVectorizedData(text, title) {
+async function saveVectorizedData(text, title, url) {
   const pinecone = new Pinecone();
   const pineconeIndex = pinecone.Index(process.env.PINECONE_INDEX);
   const textSplitter = new RecursiveCharacterTextSplitter({
@@ -23,11 +23,13 @@ async function saveVectorizedData(text, title) {
   let batch = [];
   for (let i = 0; i < chunks.length; i++) {
     const chunk = chunks[i];
+    const id = `${title}_${Date.now()}_${i}`;
     const vector = {
-      id: `${title}_${i}`,
+      id,
       values: embeddings[i],
       metadata: {
         title,
+        url,
         pageContent: chunk.pageContent,
       }
     }

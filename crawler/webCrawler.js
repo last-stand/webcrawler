@@ -14,7 +14,7 @@ async function crawl(url) {
   await browser.close();
   console.log(`Crawling completed`);
 
-  return { title, content };
+  return { title, url, content };
 }
 
 export default crawl;

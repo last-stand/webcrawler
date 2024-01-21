@@ -8,6 +8,7 @@ describe('Handling Dynamic Content with Puppeteer', () => {
       const result = await crawl(url);
   
       expect(result.title).toBeTruthy();
+      expect(result.url).toBe(url);
       expect(result.content).toBeTruthy();
     }, 10000);
   });
