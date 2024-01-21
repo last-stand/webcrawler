@@ -8,10 +8,10 @@ const queryRouter = express.Router();
     try {
         const query = req.body.query;
         const answer = await handleQuery(query);
-        res.render('index', { data: { title: APP_NAME, answer } });
+        res.send({ data: answer });
     } catch(error) {
         console.log(error);
-        res.render('index', { data: { title: APP_NAME, error: "Something went wrong!" } });
+        res.status(500).send(error);
     }
 })
 

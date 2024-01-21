@@ -1,4 +1,5 @@
 import express from "express";
+import nocache from "nocache";
 import dotenv from "dotenv";
 import logger from "morgan";
 import path from "path";
@@ -18,8 +19,10 @@ app.set('views', path.dirname('views'));
 app.set('view engine', 'ejs');
 app.set("views", path.resolve("./views"));
 
+app.use(nocache());
 app.use(logger(ENV));
 app.use(express.json());
+app.use(express.text());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.resolve('./public')));
 app.use('/', indexRouter);

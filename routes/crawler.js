@@ -1,6 +1,5 @@
 import express from "express";
 import handleWebCrawling from "../handlers/webCrawlerHandler.js";
-import { APP_NAME } from "../constants.js";
 
 const crawlerRouter = express.Router();
 
@@ -8,9 +7,10 @@ const crawlerRouter = express.Router();
     const url = req.body.url;
     try {
         await handleWebCrawling(url);
+        res.send({data: { text: "Web Crawling succeeded."} });
     } catch(error) {
         console.log(error);
-        res.render('index', { data: { title: APP_NAME, error: "Something went wrong!"} });
+        res.status(500).send(error);
     }
 })
 

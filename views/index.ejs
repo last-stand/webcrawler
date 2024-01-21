@@ -3,6 +3,7 @@
   <head>
     <title><%= data.title %></title>
     <script type="module" src="/scripts/index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
@@ -17,17 +18,12 @@
           <input type="text" name="query" id="inputQuery" placeholder="Enter your query here">
           <button id="queryButton">Ask</button>
         </div>
-        <div class="answer">
-          <% if (data.answer) { %>
-            <%= data.answer %>
-          <% } %>
-        </div>
-        <% if (data.error) { %>
-          <div class="error">
-              <%= data.error %>
-          </div>
-        <% } %>
       </div>
-    </div>
+      <div class="result">
+        <div class="loader"></div>
+        <div id="answer">Results will be shown here.</div>
+        <div id="error"></div>
+      </div>
+    </div>  
   </body>
 </html>
