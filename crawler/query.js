@@ -21,20 +21,25 @@ async function processQuery(query) {
     console.log(queryResponse);
 
     if (queryResponse.matches.length) {
-        const llm = new OpenAI({});
-        const chain = loadQAStuffChain(llm);
-        const concatenatedPageContent = queryResponse.matches
-            .map((match) => match.metadata.pageContent)
-            .join(" ");
-        const result = await chain.invoke({
-            input_documents: [new Document({ pageContent: concatenatedPageContent })],
-            question: query,
-        });
-
-        console.log(`Answer: ${result.text}`);
-        return result;
+        return askQuestion(queryResponse, query);
     }
     return "No relevent information found."
 }
 
+async function askQuestion(queryResponse, query) {
+    const llm = new OpenAI({});
+    const chain = loadQAStuffChain(llm);
+    const concatenatedPageContent = queryResponse.matches
+        .map((match) => match.metadata.pageContent)
+        .join(" ");
+    const result = await chain.invoke({
+        input_documents: [new Document({ pageContent: concatenatedPageContent })],
+        question: query,
+    });
+
+    console.log(`Answer: ${result.text}`);
+    return result;
+}
+
 export default processQuery;
+

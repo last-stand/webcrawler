@@ -16,9 +16,11 @@ async function saveVectorizedData(text, title, url) {
     chunks.map((chunk) => chunk.pageContent.replace(/\n/g, " "))
   )
   console.log("Finished embeddings creation");
-  console.log(
-    `Creating ${chunks.length} vectors array with id, values, and metadata...`
-  );
+  console.log(`Creating ${chunks.length} vectors array with id, values, and metadata...`);
+  await upsertChunksToPinecone(chunks, title, embeddings, url, pineconeIndex);
+}
+
+async function upsertChunksToPinecone(chunks, title, embeddings, url, pineconeIndex) {
   const batchSize = 100;
   let batch = [];
   for (let i = 0; i < chunks.length; i++) {
@@ -32,7 +34,7 @@ async function saveVectorizedData(text, title, url) {
         url,
         pageContent: chunk.pageContent,
       }
-    }
+    };
     batch.push(vector);
     if (batch.length === batchSize || i === chunks.length - 1) {
       await pineconeIndex.upsert(batch);

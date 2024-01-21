@@ -9,9 +9,11 @@ crawlButton.addEventListener('click', function(e) {
   }).done(function( response ) {
     if(response) {
       $("#answer").html("Crawling successful.");
+      $("#error").html("");
     }
   }).fail(function (xhr, textStatus, error) {
     $("#error").html("Something went wrong!");
+    $("#answer").html("");
     console.log(xhr.status);
     console.log(error);
   });
@@ -28,9 +30,11 @@ queryButton.addEventListener('click', function(e) {
     }).done(function( response ) {
       if(response) {
         $("#answer").html(response.data.text);
+        $("#error").html("");
       }
     }).fail(function (xhr, textStatus, error) {
       $("#error").html("Something went wrong!");
+      $("#answer").html("");
       console.log(xhr.status);
       console.log(error);
     });
