@@ -1,8 +1,7 @@
-import { OpenAIEmbeddings } from "langchain/embeddings/openai";
-import { OpenAI } from "langchain/llms/openai";
+import { OpenAIEmbeddings, OpenAI } from "@langchain/openai";
 import { loadQAStuffChain } from "langchain/chains";
 import { Pinecone } from "@pinecone-database/pinecone";
-import { Document } from 'langchain/document'
+import { Document } from '@langchain/core/documents'
 
 async function processQuery(query) {
     console.log("Querying Pinecone vector store...");

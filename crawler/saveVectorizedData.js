@@ -1,4 +1,4 @@
-import { OpenAIEmbeddings } from "langchain/embeddings/openai";
+import { OpenAIEmbeddings } from "@langchain/openai";
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter';
 import { Pinecone } from "@pinecone-database/pinecone";
 
