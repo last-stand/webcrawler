@@ -89,3 +89,4 @@ Here's a description of the architecture diagram, incorporating the specified co
         $ npm run dev
         ```
 	This is how UI looks like in the browser.
+    [Screenshot![](https://app.eraser.io/workspace/tkMgJtPpnJXu3rdHvkyf/preview)](https://app.eraser.io/workspace/tkMgJtPpnJXu3rdHvkyf)

@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font-family: 'Courier New', Courier, monospace;
+  background-color: beige;
 }
 
 .container {
@@ -11,6 +12,7 @@ body {
   text-align: center;
   border-radius: 10px;
   padding-bottom: 35px;
+  box-shadow: 12px 12px 12px #8f8f8f;
 }
 
 .userInput {
@@ -40,10 +42,11 @@ button {
 }
 
 #answer {
-  padding: 2px;
+  padding: 5px;
+  text-align: justify;
   text-wrap: wrap;
   min-height: 60px;
-  color: blue;
+  color: #3358a0;
   margin: auto;
 }
 
