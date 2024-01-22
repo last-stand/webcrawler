@@ -1,4 +1,4 @@
-import saveVectorizedData from '../crawler/saveVectorizedData';
+import saveVectorizedData from '../../crawler/saveVectorizedData';
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter';
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { Pinecone } from "@pinecone-database/pinecone";

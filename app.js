@@ -15,7 +15,6 @@ const ENV =  process.env.ENV || 'dev';
 initialisePinecone();
 const app = express();
 
-app.set('views', path.dirname('views'));
 app.set('view engine', 'ejs');
 app.set("views", path.resolve("./views"));
 

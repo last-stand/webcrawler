@@ -10,7 +10,9 @@ const crawlerRouter = express.Router();
         res.send({data: { text: "Web Crawling succeeded."} });
     } catch(error) {
         console.log(error);
-        res.status(500).send(error);
+        res.status(500).json({
+            error: error.message
+        });
     }
 })
 

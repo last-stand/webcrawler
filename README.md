@@ -77,7 +77,13 @@ Here's a description of the architecture diagram, incorporating the specified co
         PINECONE_ENVIRONMENT=gcp-starter
         PINECONE_INDEX=web-crawler
         ```
-4. **Run**
+4. **Run Tests**
+	- To run tests use,
+        ```sh
+        $ npm run test
+        ```
+
+5. **Run App**
 	- To start express server just run
         ```sh
         $ npm start

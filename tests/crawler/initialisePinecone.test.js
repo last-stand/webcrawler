@@ -1,4 +1,4 @@
-import initialisePinecone from '../crawler/initialisePinecone';
+import initialisePinecone from '../../crawler/initialisePinecone';
 import { Pinecone } from '@pinecone-database/pinecone';
 
 jest.mock('@pinecone-database/pinecone');

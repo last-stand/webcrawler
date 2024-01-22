@@ -1,4 +1,4 @@
-import processQuery from '../crawler/query';
+import processQuery from '../../crawler/query';
 import { OpenAIEmbeddings, OpenAI } from "@langchain/openai";
 import { Pinecone } from "@pinecone-database/pinecone";
 

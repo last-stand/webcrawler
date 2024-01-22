@@ -1,5 +1,5 @@
 import puppeteer from "puppeteer";
-import crawl from "../crawler/webCrawler";
+import crawl from "../../crawler/webCrawler";
 jest.mock('puppeteer');
   
 describe('Crawl Web Page', () => {
