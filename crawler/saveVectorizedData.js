@@ -2,14 +2,14 @@ import { OpenAIEmbeddings } from "@langchain/openai";
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter';
 import { Pinecone } from "@pinecone-database/pinecone";
 
-async function saveVectorizedData(text, title, url) {
+async function saveVectorizedData(content, title, url) {
   const pinecone = new Pinecone();
   const pineconeIndex = pinecone.Index(process.env.PINECONE_INDEX);
   const textSplitter = new RecursiveCharacterTextSplitter({
     chunkSize: 1000,
   });
   console.log("Splitting text into chunks...");
-  const chunks = await textSplitter.createDocuments([text]);
+  const chunks = await textSplitter.createDocuments([content]);
 
   console.log(`Creating OpenAI Embeddings with ${chunks.length} text chunks...`);
   const embeddings = await new OpenAIEmbeddings().embedDocuments(
